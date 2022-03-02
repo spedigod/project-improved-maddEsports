@@ -1,0 +1,8 @@
+php_value session.auto_start 1
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^$ public/ [L]
+    RewriteCond %{REQUEST_URL} !^/public/? [NC]
+    RewriteRule (.+) public/$1 [L]
+</IfModule>
